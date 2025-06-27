@@ -14,7 +14,7 @@ body {
     color: #090909;
 }
 
-/*Nav-Bar*/
+/***Nav-Bar***/
 
 nav {
     font-family: "Roboto", sans-serif;
@@ -22,6 +22,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     /*padding-right: 1.5em;*/
+    margin: 1em 0;
 }
 
     /*left-side*/
@@ -69,3 +70,73 @@ nav ul {
         color:inherit;
         text-decoration: none;
         }
+
+/***HERO***/
+.hero-div h1,
+.hero-div h2,
+.hero-div p{
+    margin: 0;
+} 
+
+.hero-div h1 {
+    grid-area: h1;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.hero-div h2 {
+    grid-area: h2;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.hero-div p {
+    grid-area: pp;
+    font-size: 1rem;
+    font-weight: 400;
+    
+}
+
+/*Styles*/
+
+.hero-div {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    /*position: relative;*/
+    width: 100%;
+    height: 293px;
+   
+    
+}
+
+.hero-div img,
+.hero-text {
+    grid-area: 1 / 1;
+}
+
+
+
+    .hero-div img {
+        /*display: block;*/
+        /*margin: 0 auto;*/
+        width: 100%;
+        min-height: 293px;
+        height: 30vh;
+        object-fit: cover;
+        object-position: bottom;
+
+    }
+
+    .hero-text {
+        display: grid;
+        grid-template-areas:
+            "h2"
+            "h1"
+            "pp";
+       
+        align-self: end;
+        max-width: 440px;
+        color: #fff;
+        margin: 0.25em 1.125em;
+    }
