@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+* {
+    /*outline: 1px solid red;*/
+}
+
 html,
 body {
     margin: 0;
@@ -147,7 +151,8 @@ nav ul {
 
 .entry-card-div img {
     display: block;
-    min-width: 374px;
+    width: 100%;
+    max-width: 374px;
     margin: 0 auto;
     padding: 1.5em 0;
 }
