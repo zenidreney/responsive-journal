@@ -72,26 +72,26 @@ nav ul {
         }
 
 /***HERO***/
-.hero-div h1,
-.hero-div h2,
-.hero-div p{
+.card-h1,
+.card-h2,
+.card-p{
     margin: 0;
 } 
 
-.hero-div h1 {
+.card-h1 {
     grid-area: h1;
     font-size: 2rem;
     font-weight: 700;
 }
 
-.hero-div h2 {
+.card-h2 {
     grid-area: h2;
     font-size: 0.75rem;
     font-weight: 400;
     text-transform: uppercase;
 }
 
-.hero-div p {
+.card-p {
     grid-area: pp;
     font-size: 1rem;
     font-weight: 400;
@@ -103,32 +103,30 @@ nav ul {
 .hero-div {
     display: grid;
     grid-template: 1fr / 1fr;
-    /*position: relative;*/
     width: 100%;
     height: 293px;
    
     
 }
 
-.hero-div img,
-.hero-text {
-    grid-area: 1 / 1;
-}
+    .hero-div img,
+    .hero-grid {
+        grid-area: 1 / 1;
+    }
 
 
 
     .hero-div img {
-        /*display: block;*/
-        /*margin: 0 auto;*/
+      
         width: 100%;
         min-height: 293px;
         height: 30vh;
         object-fit: cover;
-        object-position: bottom;
+        object-position: top;
 
     }
 
-    .hero-text {
+    .hero-grid {
         display: grid;
         grid-template-areas:
             "h2"
@@ -136,7 +134,37 @@ nav ul {
             "pp";
        
         align-self: end;
-        max-width: 440px;
+        max-width: 614px;
         color: #fff;
         margin: 0.25em 1.125em;
+        padding-bottom: 1em;
     }
+
+.entry-card-div {
+    display: block
+   
+}
+
+.entry-card-div img {
+    display: block;
+    min-width: 374px;
+    margin: 0 auto;
+    padding: 1.5em 0;
+}
+
+
+.entry-text-grid {
+    
+    
+    display: grid;
+     grid-template-areas:
+            "h2"
+            "h1"
+            "pp";
+        align-self: end;
+        max-width: 614px;
+     
+        margin: 0.25em 1.125em;
+        padding-bottom: 1em;
+       
+}
