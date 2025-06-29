@@ -29,7 +29,7 @@ nav {
     margin: 1em 0;
 }
 
-    /*left-side*/
+/*left-side*/
 
 .logo-div {
     display: flex;
@@ -38,49 +38,66 @@ nav {
     margin-left: 1.25em;
 }
 
-    .logo-img {
+.logo-img {
     width: 1.5rem;
-    }
+}
 
-    .logo-p {
+.avatar-div {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.avatar-div h1 {
+    font-family: inherit;
+    line-height: 1;
+    /*background-color: red;*/
+}
+
+.avatar-img {
+    /*display: block;*/
+    /*background-color: red;*/
+    width: 11.5em;
+}
+
+.logo-p {
     font-weight: 700;
     font-size: 0.85rem;
     line-height: 108%;
     letter-spacing: -3%;
-    }
+}
 
-    /*right-side*/
+/*right-side*/
 
 nav ul {
     text-transform: uppercase;
     list-style: none;
-    
+
     display: flex;
-    
+
     justify-content: space-between;
     margin-right: 1.2em;
     gap: 2.2em;
-   
 }
 
-    nav li {
+nav li {
     font-weight: 600;
     font-size: 0.75rem;
     line-height: 100%;
-    }
+}
 
-        nav a {
-        
-        color:inherit;
-        text-decoration: none;
-        }
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
 
 /***HERO***/
+
 .card-h1,
 .card-h2,
-.card-p{
+.card-p {
     margin: 0;
-} 
+}
 
 .card-h1 {
     grid-area: h1;
@@ -95,11 +112,15 @@ nav ul {
     text-transform: uppercase;
 }
 
+.card-h3 {
+    text-align: center;
+    margin: 0;
+}
+
 .card-p {
     grid-area: pp;
     font-size: 1rem;
     font-weight: 400;
-    
 }
 
 /*Styles*/
@@ -109,41 +130,43 @@ nav ul {
     grid-template: 1fr / 1fr;
     width: 100%;
     height: 293px;
-   
-    
 }
 
-    .hero-div img,
-    .hero-grid {
-        grid-area: 1 / 1;
-    }
+.hero-div img,
+.hero-grid {
+    grid-area: 1 / 1;
+}
 
+.hero-img {
+    width: 100%;
+    min-height: 293px;
+    height: 30vh;
+    object-fit: cover;
+    object-position: top;
+}
 
+.hero-grid,
+.hero-entry-grid {
+    display: grid;
+    grid-template-areas:
+        "h2"
+        "h1"
+        "pp";
 
-    .hero-div img {
-      
-        width: 100%;
-        min-height: 293px;
-        height: 30vh;
-        object-fit: cover;
-        object-position: top;
+    align-self: end;
+    margin: 0.25em 1.125em;
+    padding-bottom: 1em;
+}
 
-    }
+.hero-grid {
+    color: #fff;
+    max-width: 614px;
+}
 
-    .hero-grid {
-        display: grid;
-        grid-template-areas:
-            "h2"
-            "h1"
-            "pp";
-       
-        align-self: end;
-        max-width: 614px;
-        color: #fff;
-        margin: 0.25em 1.125em;
-        padding-bottom: 1em;
-    }
-
+.hero-grid a {
+    color: inherit;
+    text-decoration: none;
+}
 
 /*Blog Entries*/
 
@@ -152,35 +175,30 @@ nav ul {
     grid-template-columns: 1fr;
 }
 
-    .entry-card-div {
-        display: block;
+.entry-card-div {
+    display: block;
+}
 
-    }
+.blog-img {
+    display: block;
+    width: 100%;
+    max-width: 374px;
+    margin: 0 auto;
+    padding: 1.5em 0;
+}
 
-    .blog-img {
-        display: block;
-        width: 100%;
-        max-width: 374px;
-        margin: 0 auto;
-        padding: 1.5em 0;
-    }
+.entry-text-grid {
+    display: grid;
+    grid-template-areas:
+        "h2"
+        "h1"
+        "pp";
+    align-self: end;
+    max-width: 614px;
 
-
-    .entry-text-grid {
-
-
-        display: grid;
-         grid-template-areas:
-                "h2"
-                "h1"
-                "pp";
-            align-self: end;
-            max-width: 614px;
-
-            margin: 0.25em 1.125em;
-            padding-bottom: 1em;
-
-    }
+    margin: 0.25em 1.125em;
+    padding-bottom: 1em;
+}
 
 /*Footer*/
 
@@ -194,7 +212,7 @@ footer {
 
 footer {
     background-color: #202020;
-    color: #ECECEC;
+    color: #ececec;
     padding: 1em;
 }
 
@@ -207,9 +225,6 @@ footer {
     letter-spacing: 0.4em;
     cursor: pointer;
     text-decoration: underline;
-
-
-    
 }
 
 footer p,
@@ -226,32 +241,48 @@ footer h4 {
 /*Media Queries*/
 
 @media (min-width: 600px) {
+    nav li {
+        font-size: 1rem;
+    }
+
+    .logo-p {
+        font-size: 1.25rem;
+    }
+
+    .logo-img {
+        width: 2.15rem;
+    }
+
+    .avatar-div {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 3em;
+    }
+
     .hero-div,
-    .hero-div img {
+    .hero-img {
         height: 400px;
     }
-    
-    
+
     .blog-entry-div {
         grid-template-columns: 1fr 1fr;
-       
     }
-    
+
+    /*Utility*/
+
+    .indent {
+        margin: 0 2.2rem;
+    }
 }
 
 @media (min-width: 870px) {
-
     .hero-div,
-    .hero-div img {
+    .hero-img {
         height: 500px;
     }
-    
-    
+
     .blog-entry-div {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    
-    
 }
-
-
