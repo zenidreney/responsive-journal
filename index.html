@@ -34,10 +34,7 @@
 
         <main>
             <div class="hero-div">
-                <img
-                    src="media/blog-image-hero.png"
-                    class="hero-img"
-                    alt="." />
+                <img src="media/blog-image-hero.png" class="hero-img" alt="." />
 
                 <div class="hero-grid">
                     <h1 class="card-h1">My journey as a bootcamp student</h1>
@@ -52,9 +49,7 @@
 
             <div class="blog-entry-div">
                 <div class="entry-card-div">
-                    <img src="media/article-image-03.png"
-                        class="blog-img"
-                        alt="." />
+                    <img src="media/article-image-03.png" class="blog-img" alt="." />
 
                     <div class="entry-text-grid">
                         <h1 class="card-h1">Blog One</h1>
@@ -67,8 +62,7 @@
                 </div>
 
                 <div class="entry-card-div">
-                    <img src="media/article-image-02.png"  class="blog-img"
-                        alt="." />
+                    <img src="media/article-image-02.png" class="blog-img" alt="." />
 
                     <div class="entry-text-grid">
                         <h1 class="card-h1">Blog Two</h1>
@@ -81,8 +75,7 @@
                 </div>
 
                 <div class="entry-card-div">
-                    <img src="media/article-image-03.png"  class="blog-img"
-                        alt="." />
+                    <img src="media/article-image-03.png" class="blog-img" alt="." />
 
                     <div class="entry-text-grid">
                         <h1 class="card-h1">Blog Three</h1>
@@ -93,13 +86,9 @@
                         </p>
                     </div>
                 </div>
-            </div>
-               
-            <div class="blog-entry-div">
-                <div class="entry-card-div">
-                    <img src="media/blog-image-03.png"
-                        class="blog-img"
-                        alt="." />
+
+                <div id="blog-four-div" class="entry-card-div hidden">
+                    <img src="media/blog-image-03.png" class="blog-img" alt="." />
 
                     <div class="entry-text-grid">
                         <h1 class="card-h1">Blog Four</h1>
@@ -111,9 +100,8 @@
                     </div>
                 </div>
 
-                <div class="entry-card-div">
-                    <img src="media/blog-image-01.png"  class="blog-img"
-                        alt="." />
+                <div id="blog-five-div" class="entry-card-div hidden">
+                    <img src="media/blog-image-01.png" class="blog-img" alt="." />
 
                     <div class="entry-text-grid">
                         <h1 class="card-h1">Blog Five</h1>
@@ -125,9 +113,8 @@
                     </div>
                 </div>
 
-                <div class="entry-card-div">
-                    <img src="media/blog-image-02.png"  class="blog-img"
-                        alt="." />
+                <div id="blog-six-div" class="entry-card-div hidden">
+                    <img src="media/blog-image-02.png" class="blog-img" alt="." />
 
                     <div class="entry-text-grid">
                         <h1 class="card-h1">Blog Six</h1>
@@ -139,16 +126,51 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="view-more-div">
                 <button class="view-more-btn" id="view-more-btn">View More</button>
             </div>
         </main>
-        
+
         <footer>
             <h4>My Learning Journal</h4>
             <p>Copyright @ 2025</p>
-            
         </footer>
+
+        <script>
+            
+            const mediaTabletViewPort = window.matchMedia("(min-width: 600px) and (max-width: 870px)");
+            const blogFourDiv = document.getElementById("blog-four-div");
+
+            /*Show even number of entries for 2 col view*/
+
+            if (mediaTabletViewPort.matches) {
+                blogFourDiv.classList.remove("hidden");
+            }
+
+            /*View more View Less Event Handler*/
+
+            const viewMoreBtn = document.getElementById("view-more-btn");
+            let isClicked = false;
+
+            viewMoreBtn.addEventListener("click", function () {
+                const blogDivIds = mediaTabletViewPort.matches
+                    ? ["blog-five-div", "blog-six-div"]
+                    : ["blog-four-div", "blog-five-div", "blog-six-div"];
+
+                const blogDivs = blogDivIds.map((divId) => document.getElementById(divId));
+
+                blogDivs.forEach(function (div) {
+                    div.classList.toggle("hidden");
+                });
+
+                isClicked = !isClicked;
+
+                if (isClicked) {
+                    viewMoreBtn.textContent = "View Less";
+                } else viewMoreBtn.textContent = "View More";
+            });
+        </script>
+        
     </body>
 </html>

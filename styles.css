@@ -153,7 +153,7 @@ nav ul {
 }
 
     .entry-card-div {
-        display: block
+        display: block;
 
     }
 
@@ -217,9 +217,27 @@ footer h4 {
     margin: 0;
 }
 
+/*Utility*/
 
+.hidden {
+    display: none;
+}
 
+/*Media Queries*/
 
+@media (min-width: 600px) {
+    .hero-div,
+    .hero-div img {
+        height: 400px;
+    }
+    
+    
+    .blog-entry-div {
+        grid-template-columns: 1fr 1fr;
+       
+    }
+    
+}
 
 @media (min-width: 870px) {
 
