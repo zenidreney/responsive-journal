@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <nav>
+        <nav id="nav-bar" class="nav-bar align-flex-center">
             <div class="logo-div">
                 <img class="logo-img" src="media/logo.png" alt="Site logo." />
                 <p class="logo-p">My Learning Journal</p>
@@ -165,27 +165,24 @@
             /*Menu Button*/
             const menuUl = document.getElementById("menu-ul");
             const menuBtn = document.getElementById("menu-btn");
+            const navBar = document.getElementById("nav-bar");
+
             let menuBtnClicked = false;
 
             menuBtn.addEventListener("click", function () {
                 console.log("clicked");
                 menuUl.classList.toggle("hidden");
                 menuBtnClicked = !menuBtnClicked;
-                
-                if(menuBtnClicked) {
-                    
-                menuBtn.textContent = "X";
-                    
+
+                if (menuBtnClicked) {
+                    menuBtn.textContent = "X";
+                    navBar.classList.add("align-flex-start");
+                    navBar.classList.remove("align-flex-center");
                 } else {
-                    
-                menuBtn.textContent ="Menu";
-                    
+                    menuBtn.textContent = "Menu";
+                    navBar.classList.add("align-flex-center");
+                    navBar.classList.remove("align-flex-start");
                 }
-                    
-                    
-                    
-                    
-                
             });
         </script>
     </body>
