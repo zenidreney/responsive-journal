@@ -20,7 +20,7 @@ body {
 nav {
     font-family: "Roboto", sans-serif;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding-right: 1.5em;
     margin: 1em 0;
@@ -61,26 +61,54 @@ nav {
     font-weight: 700;
     font-size: 0.85rem;
     line-height: 108%;
-    letter-spacing: -3%;
+    
 }
 
 /*right-side*/
 
+.nav-menu  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.nav-menu button,
 nav ul {
+    margin-top: 0.5em;
     text-transform: uppercase;
+   
+}
+
+.nav-menu button {
+    border: none;
+    background-color: #fff;
+    font-weight: 600;
+
+    
+  padding: 0;
+
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+nav ul {
     list-style: none;
 
     display: flex;
-
-    justify-content: space-between;
-    margin-right: 1.2em;
-    gap: 2.2em;
+    
+    flex-direction: column;
+    
+    justify-content: center;
+    
+    align-items: flex-end;
+    
+    gap: 0.8em;
 }
 
 nav li {
     font-weight: 600;
     font-size: 0.75rem;
-    line-height: 100%;
+    /*line-height: 100%;*/
 }
 
 nav a {

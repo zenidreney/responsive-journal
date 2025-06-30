@@ -25,7 +25,8 @@
             </div>
 
             <div class="nav-menu" id="nav-menu">
-                <ul>
+                <button id="menu-btn">Menu</button>
+                <ul id="menu-ul" class="hidden">
                     <li><a href="#">Home</a></li>
                     <li><a href="./about-me.html">About Me</a></li>
                 </ul>
@@ -140,9 +141,6 @@
         </footer>
 
         <script>
-            const mediaTabletViewPort = window.matchMedia("(min-width: 600px) and (max-width: 870px)");
-         
-
             /*View more View Less Event Handler*/
 
             const viewMoreBtn = document.getElementById("view-more-btn");
@@ -162,6 +160,32 @@
                 if (isClicked) {
                     viewMoreBtn.textContent = "View Less";
                 } else viewMoreBtn.textContent = "View More";
+            });
+
+            /*Menu Button*/
+            const menuUl = document.getElementById("menu-ul");
+            const menuBtn = document.getElementById("menu-btn");
+            let menuBtnClicked = false;
+
+            menuBtn.addEventListener("click", function () {
+                console.log("clicked");
+                menuUl.classList.toggle("hidden");
+                menuBtnClicked = !menuBtnClicked;
+                
+                if(menuBtnClicked) {
+                    
+                menuBtn.textContent = "X";
+                    
+                } else {
+                    
+                menuBtn.textContent ="Menu";
+                    
+                }
+                    
+                    
+                    
+                    
+                
             });
         </script>
     </body>

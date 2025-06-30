@@ -25,7 +25,8 @@
             </div>
 
             <div class="nav-menu" id="nav-menu">
-                <ul>
+                <button id="menu-btn">Menu</button>
+                <ul id="menu-ul" class="hidden">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./about-me.html">About Me</a></li>
                 </ul>
@@ -124,14 +125,31 @@
         </footer>
 
         <script>
-            const mediaTabletViewPort = window.matchMedia("(min-width: 600px) and (max-width: 870px)");
-            const blogFourDiv = document.getElementById("blog-four-div");
+            /*Menu Button*/
+            const menuUl = document.getElementById("menu-ul");
+            const menuBtn = document.getElementById("menu-btn");
+            let menuBtnClicked = false;
 
-            /*Show even number of entries for 2 col view*/
-
-            if (mediaTabletViewPort.matches) {
-                blogFourDiv.classList.remove("hidden");
-            }
+            menuBtn.addEventListener("click", function () {
+                console.log("clicked");
+                menuUl.classList.toggle("hidden");
+                menuBtnClicked = !menuBtnClicked;
+                
+                if(menuBtnClicked) {
+                    
+                menuBtn.textContent = "X";
+                    
+                } else {
+                    
+                menuBtn.textContent ="Menu";
+                    
+                }
+                    
+                    
+                    
+                    
+                
+            });
         </script>
     </body>
 </html>
