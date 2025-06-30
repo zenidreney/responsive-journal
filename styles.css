@@ -183,8 +183,10 @@ nav a {
     display: block;
     width: 100%;
     max-width: 374px;
+    max-height: 242px;
     margin: 0 auto;
     padding: 1.5em 0;
+    object-fit: cover;
 }
 
 .entry-text-grid {
@@ -272,7 +274,7 @@ footer h4 {
     /*Utility*/
 
     .indent {
-        margin: 0 2.2rem;
+        margin: 0.6rem 2.2rem;
     }
 }
 
@@ -285,4 +287,12 @@ footer h4 {
     .blog-entry-div {
         grid-template-columns: 1fr 1fr 1fr;
     }
+}
+
+@media (max-height: 400px) {
+    
+    #blog-four-div {
+        display: block;
+    }
+    
 }

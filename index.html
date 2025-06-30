@@ -141,13 +141,7 @@
 
         <script>
             const mediaTabletViewPort = window.matchMedia("(min-width: 600px) and (max-width: 870px)");
-            const blogFourDiv = document.getElementById("blog-four-div");
-
-            /*Show even number of entries for 2 col view*/
-
-            if (mediaTabletViewPort.matches) {
-                blogFourDiv.classList.remove("hidden");
-            }
+         
 
             /*View more View Less Event Handler*/
 
@@ -155,9 +149,7 @@
             let isClicked = false;
 
             viewMoreBtn.addEventListener("click", function () {
-                const blogDivIds = mediaTabletViewPort.matches
-                    ? ["blog-five-div", "blog-six-div"]
-                    : ["blog-four-div", "blog-five-div", "blog-six-div"];
+                const blogDivIds = ["blog-four-div", "blog-five-div", "blog-six-div"];
 
                 const blogDivs = blogDivIds.map((divId) => document.getElementById(divId));
 
