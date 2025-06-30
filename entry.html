@@ -141,10 +141,12 @@
                     menuBtn.textContent = "X";
                     navBar.classList.add("align-flex-start");
                     navBar.classList.remove("align-flex-center");
+                    document.getElementById("nav-menu").classList.add("margin-top");
                 } else {
                     menuBtn.textContent = "Menu";
                     navBar.classList.add("align-flex-center");
                     navBar.classList.remove("align-flex-start");
+                    document.getElementById("nav-menu").classList.remove("margin-top");
                 }
             });
         </script>
