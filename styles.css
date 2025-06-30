@@ -19,7 +19,7 @@ body {
 .nav-bar {
     font-family: "Roboto", sans-serif;
     display: flex;
-   
+
     justify-content: space-between;
     padding-right: 1.5em;
     margin: 1em 0;
@@ -259,14 +259,17 @@ footer h4 {
     display: none;
 }
 
- .align-flex-start {
-        align-items: flex-start;
-    }
-    
-    .align-flex-center {
-        align-items: center;
-    }
+.align-flex-start {
+    align-items: flex-start;
+}
 
+.align-flex-center {
+    align-items: center;
+}
+
+.margin-top {
+    margin-top: 0.45em;
+}
 
 /*Media Queries*/
 
@@ -278,18 +281,17 @@ footer h4 {
 }
 
 @media (min-width: 600px) {
-    
     nav {
         align-items: center;
     }
-    
+
     .nav-menu button {
         display: none;
     }
 
     #menu-ul {
         display: flex;
-        
+
         flex-direction: row;
         margin: auto;
     }
@@ -327,8 +329,6 @@ footer h4 {
     .indent {
         margin: 0.6rem 2.2rem;
     }
-    
-   
 }
 
 @media (min-width: 870px) {
